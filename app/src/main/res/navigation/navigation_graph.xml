@@ -1,11 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/listPetsFragment">
 
     <fragment
         android:id="@+id/listPetsFragment"
         android:name="com.example.pets.listPets.ListPetsFragment"
-        android:label="ListPetsFragment" />
+        android:label="Pets List"
+        tools:layout="@layout/fragment_list_pets">
+        <action
+            android:id="@+id/action_listPetsFragment_to_addPetsFragment"
+            app:destination="@id/addPetsFragment" />
+        <action
+            android:id="@+id/action_listPetsFragment_to_petDetailsFragment"
+            app:destination="@id/petDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPetsFragment"
+        android:name="com.example.pets.addPets.AddPetsFragment"
+        android:label="Add Pets"
+        tools:layout="@layout/fragment_add_pets">
+        <action
+            android:id="@+id/action_addPetsFragment_to_listPetsFragment2"
+            app:destination="@id/listPetsFragment"
+            app:popUpTo="@+id/listPetsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/petDetailsFragment"
+        android:name="com.example.pets.petDetails.PetDetailsFragment"
+        android:label="Pet Details"
+        tools:layout="@layout/fragment_pet_details">
+        <action
+            android:id="@+id/action_petDetailsFragment_to_listPetsFragment2"
+            app:destination="@id/listPetsFragment"
+            app:popUpTo="@+id/listPetsFragment" />
+    </fragment>
 </navigation>

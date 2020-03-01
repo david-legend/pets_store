@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Pets</string>
+    <string name="pet_name">pet name</string>
+    <string name="breed">breed</string>
+    <string name="age">age</string>
+    <string name="save_pet">save pet</string>
 </resources>
