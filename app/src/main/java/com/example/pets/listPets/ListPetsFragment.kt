@@ -42,7 +42,7 @@ class ListPetsFragment : Fragment() {
         binding.setLifecycleOwner(this)
 
         val adapter = PetsAdapter(PetListener { petId ->
-            Toast.makeText(context, "${petId}", Toast.LENGTH_LONG).show()
+            findNavController().navigate(ListPetsFragmentDirections.actionListPetsFragmentToPetDetailsFragment(petId))
         })
         binding.petList.adapter = adapter
 
@@ -54,7 +54,7 @@ class ListPetsFragment : Fragment() {
 
         binding.addPetsFab.setOnClickListener { it ->
             findNavController().navigate(
-                R.id.action_listPetsFragment_to_addPetsFragment
+                ListPetsFragmentDirections.actionListPetsFragmentToAddPetsFragment()
             )
         }
         return binding.root

@@ -36,5 +36,8 @@
             android:id="@+id/action_petDetailsFragment_to_listPetsFragment2"
             app:destination="@id/listPetsFragment"
             app:popUpTo="@+id/listPetsFragment" />
+        <argument
+            android:name="selectedPetId"
+            app:argType="long" />
     </fragment>
 </navigation>
